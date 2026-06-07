@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haurdić • Custom Furniture Since 1966 | Slavonski Brod, Croatia</title>
+  <meta name="description" content="Three generations of master craftsmen creating bespoke upholstered furniture and complete interior solutions in Slavonski Brod since 1966. Hospitality, residential &amp; commercial projects across Croatia.">
+  <meta name="author" content="Haurdić – The Furniture Company">
+  <link rel="canonical" href="https://haurdic.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Haurdić • Bespoke Furniture &amp; Interiors Since 1966">
+  <meta property="og:description" content="Family-owned atelier in Slavonski Brod creating exceptional custom furniture for the finest homes and hospitality venues across Croatia.">
+  <meta property="og:image" content="assets/images/hero-living.jpg">
+  <meta property="og:url" content="https://haurdic.com">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    'rgb(var(--c-cream) / <alpha-value>)',
+            ink:      'rgb(var(--c-ink) / <alpha-value>)',
+            brass:    { DEFAULT: 'rgb(var(--c-brass) / <alpha-value>)', dark: 'rgb(var(--c-brass-dark) / <alpha-value>)' },
+            bronze:   'rgb(var(--c-bronze) / <alpha-value>)',
+            line:     'rgb(var(--c-line) / <alpha-value>)',
+            stone:    'rgb(var(--c-stone) / <alpha-value>)',
+            cocoa:    'rgb(var(--c-cocoa) / <alpha-value>)',
+            espresso: 'rgb(var(--c-espresso) / <alpha-value>)',
+            obsidian: 'rgb(var(--c-obsidian) / <alpha-value>)',
+            sand:     'rgb(var(--c-sand) / <alpha-value>)',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-cream text-ink antialiased selection:bg-brass selection:text-white">
+
+  <!-- Fixed site header — transparent over hero, solid on scroll -->
+  <div id="site-header" class="fixed inset-x-0 top-0 z-50">
+
+  <!-- Navigation -->
+  <nav class="site-nav relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center h-20 md:h-[104px] gap-4 md:gap-8">
+        <!-- Left: navigation -->
+        <div class="hidden md:flex flex-1 items-center justify-start gap-6 lg:gap-8 text-sm font-medium">
+          <a href="#about" data-i18n="nav-about" class="nav-link hover:text-bronze transition-colors">About</a>
+          <a href="#expertise" data-i18n="nav-services" class="nav-link hover:text-bronze transition-colors">Expertise</a>
+          <a href="#process" data-i18n="nav-process" class="nav-link hover:text-bronze transition-colors">Process</a>
+          <a href="#work" data-i18n="nav-projects" class="nav-link hover:text-bronze transition-colors">Work</a>
+          <a href="#contact" data-i18n="nav-contact" class="nav-link hover:text-bronze transition-colors">Contact</a>
+        </div>
+
+        <!-- Center: logo (white over hero, dark on scroll) -->
+        <a href="#" class="logo-swap relative shrink-0 inline-flex items-center" aria-label="Haurdić — The Furniture Company, home">
+          <img src="assets/logo/logo.png" alt="Haurdić — The Furniture Company" class="logo-dark block h-14 md:h-[84px] w-auto select-none" draggable="false">
+          <img src="assets/logo/logo_white.png" alt="" aria-hidden="true" class="logo-light absolute top-0 left-0 h-14 md:h-[84px] w-auto opacity-0 select-none" draggable="false">
+        </a>
+
+        <!-- Right: language + Request Quote -->
+        <div class="hidden md:flex flex-1 items-center justify-end gap-5">
+          <div class="lang-switch">
+            <button data-lang="en" class="lang-btn active px-3 py-0.5 text-[10px]">EN</button>
+            <button data-lang="hr" class="lang-btn px-3 py-0.5 text-[10px]">HR</button>
+          </div>
+          <a href="#contact" data-i18n="nav-quote"
+             class="quote-btn btn-lux px-6 py-2.5 rounded-full border border-ink text-sm font-medium tracking-wide hover:bg-ink hover:text-white transition-all">Request Quote</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+                class="mobile-btn md:hidden ml-auto w-10 h-10 flex items-center justify-center text-ink">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-cream">
+      <div class="px-6 py-6 flex flex-col gap-4 text-base font-medium">
+        <a href="#about" data-i18n="nav-about" class="py-1">About</a>
+        <a href="#expertise" data-i18n="nav-services" class="py-1">Expertise</a>
+        <a href="#process" data-i18n="nav-process" class="py-1">Process</a>
+        <a href="#work" data-i18n="nav-projects" class="py-1">Work</a>
+        <a href="#contact" data-i18n="nav-contact" class="py-1">Contact</a>
+        <div class="pt-3 border-t border-line">
+          <a href="#contact" data-i18n="nav-quote"
+             class="block w-full text-center py-3 rounded-full bg-ink text-white text-sm tracking-widest">REQUEST QUOTE</a>
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button data-lang="en" class="lang-btn flex-1 py-2 rounded-full text-xs border border-ink active">EN</button>
+          <button data-lang="hr" class="lang-btn flex-1 py-2 rounded-full text-xs border border-ink">HR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  </div>
+  <!-- /#site-header -->
+
+  <!-- HERO -->
+  <header id="hero" class="relative h-[100dvh] min-h-[640px] flex items-center justify-center overflow-hidden bg-ink pt-28 md:pt-36 pb-16">
+    <div class="absolute inset-0">
+      <img src="assets/images/hero-living.jpg" 
+           alt="Luxurious custom living room with Haurdić sectional sofa" 
+           class="absolute inset-0 w-full h-full object-cover">
+      <iframe class="hero-video"
+              src="https://www.youtube-nocookie.com/embed/rcDjTOvne-k?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=rcDjTOvne-k&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0"
+              title="Haurdić — Inside the workshop"
+              frameborder="0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              aria-hidden="true" tabindex="-1"></iframe>
+      <!-- Small darken overlay -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/65"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl px-6 text-center text-white">
+      <div class="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur text-[10px] tracking-[3px] mb-6" data-i18n="hero-eyebrow">
+        EST. 1966 • SLAVONSKI BROD
+      </div>
+      
+      <h1 class="font-serif text-6xl md:text-7xl lg:text-[82px] leading-[0.94] tracking-[-3.6px] mb-6" data-i18n="hero-title">
+        Crafted with three generations of mastery.
+      </h1>
+      
+      <p class="max-w-[620px] mx-auto text-lg md:text-xl text-white/90 mb-8 tracking-[-0.2px]" data-i18n="hero-subtitle">
+        Bespoke upholstered furniture and complete interior solutions. Every piece made by hand in our family workshop in Croatia.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#work" 
+           class="btn-lux inline-flex items-center justify-center px-9 py-4 rounded-full bg-white text-ink font-semibold text-sm tracking-[1px] hover:bg-cream">
+          <span data-i18n="hero-cta-primary">Explore Our Work</span>
+        </a>
+        <a href="#contact" 
+           class="btn-lux inline-flex items-center justify-center px-9 py-4 rounded-full border border-white/70 text-white font-medium text-sm tracking-[1px] hover:bg-white/10">
+          <span data-i18n="hero-cta-secondary">Request a Consultation</span>
+        </a>
+      </div>
+
+      <!-- Hero stats (over the film) -->
+      <div id="stats-section" class="mt-9 md:mt-12 pt-7 border-t border-white/15 max-w-3xl mx-auto flex flex-wrap items-stretch justify-center">
+        <div class="px-6 sm:px-9 py-1">
+          <div class="stat-number font-serif text-4xl md:text-5xl text-white tabular-nums leading-none" data-target="58" data-plus="false">58</div>
+          <div class="text-[10px] tracking-[2.5px] text-brass mt-2.5" data-i18n="stats-years">YEARS OF TRADITION</div>
+        </div>
+        <div class="px-6 sm:px-9 py-1 sm:border-l border-white/15">
+          <div class="stat-number font-serif text-4xl md:text-5xl text-white tabular-nums leading-none" data-target="250" data-plus="true">250</div>
+          <div class="text-[10px] tracking-[2.5px] text-brass mt-2.5" data-i18n="stats-projects">PROJECTS DELIVERED</div>
+        </div>
+        <div class="px-6 sm:px-9 py-1 sm:border-l border-white/15">
+          <div class="stat-number font-serif text-4xl md:text-5xl text-white tabular-nums leading-none" data-target="13" data-plus="false">13</div>
+          <div class="text-[10px] tracking-[2.5px] text-brass mt-2.5" data-i18n="stats-artisans">MASTER ARTISANS</div>
+        </div>
+        <div class="px-6 sm:px-9 py-1 sm:border-l border-white/15">
+          <div class="stat-number font-serif text-4xl md:text-5xl text-white tabular-nums leading-none" data-target="3" data-plus="false">3</div>
+          <div class="text-[10px] tracking-[2.5px] text-brass mt-2.5" data-i18n="stats-generations">GENERATIONS</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT / LEGACY -->
+  <section id="about" class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+    <div class="relative overflow-hidden bg-ink rounded-[2.5rem] p-2.5 md:p-3">
+      <img src="assets/images/legacy-bg.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover">
+      <!-- darkening overlays -->
+      <div class="absolute inset-0 bg-ink/75"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/85"></div>
+      <div class="relative rounded-[2rem] md:rounded-[1.9rem] border border-white/15 px-7 py-12 md:px-14 md:py-16">
+        <div class="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-12 items-stretch">
+          <!-- Left: eyebrow, title & story -->
+          <div>
+            <div class="uppercase text-xs tracking-[3px] text-brass mb-3" data-i18n="about-eyebrow">OUR LEGACY</div>
+            <h2 class="font-serif text-[40px] md:text-[52px] leading-[0.96] tracking-[-2.2px] text-cream" data-i18n="about-title">
+              A family promise, kept for nearly six decades.
+            </h2>
+            <div class="mt-7 text-[15px] leading-relaxed text-cream/70 space-y-5 max-w-xl">
+              <p data-i18n="about-p1">
+                Since 1966, the Haurdić name has stood for uncompromising quality in custom furniture. What began as a small workshop founded by our grandfather has become a modern atelier run by the third generation — still guided by the same values: patience, precision, and deep respect for the craft.
+              </p>
+              <p data-i18n="about-p2">
+                Today our team of 13 artisans works with Europe’s finest materials — Italian velvets and leathers, responsibly sourced solid woods, and high-performance foams — to create furniture that lasts generations. We treat every commission as a personal promise.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: percentage highlights, framed -->
+          <div class="rounded-[1.5rem] border border-white/15 px-8 py-2 md:px-10 flex flex-col justify-center divide-y divide-white/12">
+            <div class="py-8">
+              <div class="font-serif text-[68px] md:text-[88px] leading-[0.85] tracking-[-3px] text-cream"><span class="pct-num" data-target="100">0</span><span class="text-brass">%</span></div>
+              <p class="mt-3 text-[15px] leading-relaxed text-cream/60 max-w-[26ch]" data-i18n="about-stat-1">Client satisfaction is our daily standard.</p>
+            </div>
+            <div class="py-8">
+              <div class="font-serif text-[68px] md:text-[88px] leading-[0.85] tracking-[-3px] text-cream"><span class="pct-num" data-target="94">0</span><span class="text-brass">%</span></div>
+              <p class="mt-3 text-[15px] leading-relaxed text-cream/60 max-w-[26ch]" data-i18n="about-stat-2">Of projects delivered on or before the agreed date.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE / SERVICES -->
+  <section id="expertise" class="bg-white border-y border-line py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="uppercase text-xs tracking-[3px] text-bronze" data-i18n="services-eyebrow">WHAT WE CREATE</div>
+        <h3 class="font-serif text-5xl tracking-[-1.8px] mt-2" data-i18n="services-title">Expertise across every scale.</h3>
+        <p class="mt-3 max-w-md mx-auto text-stone" data-i18n="services-subtitle">
+          From intimate residential pieces to complete hospitality fit-outs, we bring the same obsessive attention to detail.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Service Cards -->
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1v-5m0 0h4m-4 0a1 1 0 011-1v-4" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Bespoke Sofas &amp; Sectionals</h4>
+          <p class="text-sm leading-relaxed text-cocoa">Signature pieces designed around your architecture, art, and daily life. Every curve, proportion, and fabric chosen for lasting comfort and beauty.</p>
+        </div>
+
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 21V5a2 2 0 01-2-2H7a2 2 0 01-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Hospitality &amp; Commercial</h4>
+          <p class="text-sm leading-relaxed text-cocoa">Cafés, restaurants, hotels, bars, and public spaces. Furniture built to withstand heavy use while elevating the guest experience.</p>
+        </div>
+
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1v-5m0 0h4m-4 0a1 1 0 011-1v-4" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Beds &amp; Headboards</h4>
+          <p class="text-sm leading-relaxed text-cocoa">Fully custom upholstered beds and statement headboards. Designed for the way you actually sleep and live.</p>
+        </div>
+
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.058 11H1M12 3v2m0 16v2m9-9H15m-6 0a8 8 0 01-.963-1.035" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Reupholstery &amp; Restoration</h4>
+          <p class="text-sm leading-relaxed text-cocoa">Give your beloved pieces new life. We restore heirlooms and update existing furniture with premium materials and impeccable craftsmanship.</p>
+        </div>
+
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Full Interior Fit-outs</h4>
+          <p class="text-sm leading-relaxed text-cocoa">We partner with architects and designers on complete projects — from concept through final installation and styling.</p>
+        </div>
+
+        <div class="group border border-line hover:border-brass transition-colors rounded-3xl p-8 bg-cream">
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 8.944 11.922" /></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Bespoke Materials &amp; Finishes</h4>
+          <p class="text-sm leading-relaxed text-cocoa">We curate and source exclusive fabrics, leathers, and finishes unavailable elsewhere in the region. Your piece will be truly one-of-a-kind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS (scroll-driven steps) -->
+  <section id="process" class="process-scroll relative bg-ink text-white" style="height:500svh;">
+    <div class="sticky top-0 h-[100svh] overflow-hidden">
+
+      <!-- Crossfading backgrounds -->
+      <div class="absolute inset-0">
+        <div class="process-bg is-active absolute inset-0 bg-cover bg-center" style="background-image:url('assets/images/guesthouse-lounge.jpg');"></div>
+        <div class="process-bg absolute inset-0 bg-cover bg-center" style="background-image:url('assets/images/living-room-boucle.jpg');"></div>
+        <div class="process-bg absolute inset-0 bg-cover bg-center" style="background-image:url('assets/images/materials-swatches.jpg');"></div>
+        <div class="process-bg absolute inset-0 bg-cover bg-center" style="background-image:url('assets/images/cafe-interior.jpg');"></div>
+        <div class="process-bg absolute inset-0 bg-cover bg-center" style="background-image:url('assets/images/upholstery-hands.jpg');"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/70 to-ink/90"></div>
+
+      <!-- Content -->
+      <div class="relative h-full max-w-5xl mx-auto px-6 flex flex-col">
+        <div class="pt-28 md:pt-32 text-center shrink-0">
+          <div class="uppercase text-xs tracking-[3px] text-brass" data-i18n="process-eyebrow">HOW WE WORK</div>
+          <p class="mt-3 text-white/55 text-sm md:text-[15px] max-w-md mx-auto" data-i18n="process-title">From first conversation to white-glove delivery.</p>
+        </div>
+
+        <div class="relative flex-1">
+        <div class="process-slide is-active" data-step="0">
+          <div class="relative flex items-center justify-center">
+            <span class="process-num" aria-hidden="true">01</span>
+            <h3 class="pstep-title" data-i18n="process-1-title">Discovery</h3>
+          </div>
+          <p class="pstep-desc" data-i18n="process-1-desc">We listen. Every space, every family, every business has its own rhythm. We visit the site, understand your vision, and translate it into clear requirements.</p>
+        </div>
+        <div class="process-slide" data-step="1">
+          <div class="relative flex items-center justify-center">
+            <span class="process-num" aria-hidden="true">02</span>
+            <h3 class="pstep-title" data-i18n="process-2-title">Design &amp; Visualization</h3>
+          </div>
+          <p class="pstep-desc" data-i18n="process-2-desc">Our designers create detailed drawings and 3D visualizations. You approve proportions, comfort, and materials before a single frame is cut.</p>
+        </div>
+        <div class="process-slide" data-step="2">
+          <div class="relative flex items-center justify-center">
+            <span class="process-num" aria-hidden="true">03</span>
+            <h3 class="pstep-title" data-i18n="process-3-title">Material Curation</h3>
+          </div>
+          <p class="pstep-desc" data-i18n="process-3-desc">We source only the best: top-grain leathers, performance velvets, solid hardwood frames. You receive physical samples and make the final choices.</p>
+        </div>
+        <div class="process-slide" data-step="3">
+          <div class="relative flex items-center justify-center">
+            <span class="process-num" aria-hidden="true">04</span>
+            <h3 class="pstep-title" data-i18n="process-4-title">Masterful Craftsmanship</h3>
+          </div>
+          <p class="pstep-desc" data-i18n="process-4-desc">In our Slavonski Brod workshop, master upholsterers and cabinetmakers spend weeks on each piece. Every stitch, joint, and curve is inspected by hand.</p>
+        </div>
+        <div class="process-slide" data-step="4">
+          <div class="relative flex items-center justify-center">
+            <span class="process-num" aria-hidden="true">05</span>
+            <h3 class="pstep-title" data-i18n="process-5-title">White-Glove Delivery</h3>
+          </div>
+          <p class="pstep-desc" data-i18n="process-5-desc">White-glove installation by our own team. We place every piece, adjust, and ensure it feels perfect in your space. Then we leave you with care instructions for a lifetime.</p>
+        </div>
+        </div>
+
+        <div class="pb-12 md:pb-16 shrink-0">
+          <div class="flex items-end justify-center gap-4 md:gap-7">
+          <button class="process-dot is-active" data-i="0" aria-label="Step 01">
+            <span class="dot-num block text-[11px] tracking-[2px] mb-2.5">01</span>
+            <span class="dot-bar"><span class="dot-fill"></span></span>
+          </button>
+          <button class="process-dot" data-i="1" aria-label="Step 02">
+            <span class="dot-num block text-[11px] tracking-[2px] mb-2.5">02</span>
+            <span class="dot-bar"><span class="dot-fill"></span></span>
+          </button>
+          <button class="process-dot" data-i="2" aria-label="Step 03">
+            <span class="dot-num block text-[11px] tracking-[2px] mb-2.5">03</span>
+            <span class="dot-bar"><span class="dot-fill"></span></span>
+          </button>
+          <button class="process-dot" data-i="3" aria-label="Step 04">
+            <span class="dot-num block text-[11px] tracking-[2px] mb-2.5">04</span>
+            <span class="dot-bar"><span class="dot-fill"></span></span>
+          </button>
+          <button class="process-dot" data-i="4" aria-label="Step 05">
+            <span class="dot-num block text-[11px] tracking-[2px] mb-2.5">05</span>
+            <span class="dot-bar"><span class="dot-fill"></span></span>
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="work" class="bg-ink py-16 md:py-20 text-cream">
+    <div class="px-6 md:px-10">
+      <div class="mb-10 max-w-2xl">
+        <div class="uppercase tracking-[3px] text-xs text-brass" data-i18n="projects-eyebrow">SELECTED WORK</div>
+        <h3 class="font-serif text-white text-5xl tracking-[-1.6px] mt-2" data-i18n="projects-title">Spaces we have shaped.</h3>
+        <p class="mt-4 text-cream/70 text-[15px] leading-relaxed" data-i18n="projects-subtitle">
+          A selection of hospitality, residential, and commercial projects across Croatia.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-2 mb-8">
+        <button class="filter-btn active px-5 py-2 rounded-full text-sm border border-white/20 hover:bg-white/5 transition-colors" data-filter="all" data-i18n="projects-filter-all">All Projects</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm border border-white/20 hover:bg-white/5 transition-colors" data-filter="hospitality" data-i18n="projects-filter-hospitality">Hospitality</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm border border-white/20 hover:bg-white/5 transition-colors" data-filter="residential" data-i18n="projects-filter-residential">Residential</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm border border-white/20 hover:bg-white/5 transition-colors" data-filter="commercial" data-i18n="projects-filter-commercial">Commercial</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="projects-grid"></div>
+
+      <div class="text-center mt-14">
+        <a href="#contact" class="inline-block px-8 py-3.5 rounded-full border border-white/30 hover:bg-white/10 text-sm tracking-widest transition-colors" data-i18n="projects-cta">
+          REQUEST A SIMILAR PROJECT
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRAFT & MATERIALS -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="uppercase text-xs tracking-[3px] text-bronze" data-i18n="craft-eyebrow">THE HAURDIĆ STANDARD</div>
+        <h3 class="font-serif text-[44px] leading-none tracking-[-1.8px] mt-3" data-i18n="craft-title">Materials &amp; mastery you can feel.</h3>
+        <div class="mt-6 text-[15px] leading-relaxed text-cocoa max-w-prose" data-i18n="craft-p">
+          We believe the best furniture begins long before the first cut. That is why we travel Europe to select the finest hides, the most durable performance fabrics, and timber from sustainably managed forests. Our frames are built to outlast us all.
+        </div>
+        <div class="mt-6 flex gap-3 text-xs">
+          <div class="px-4 py-2 bg-white border border-line rounded-full">Italian Leathers</div>
+          <div class="px-4 py-2 bg-white border border-line rounded-full">Performance Velvets</div>
+          <div class="px-4 py-2 bg-white border border-line rounded-full">Solid Hardwoods</div>
+        </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-line shadow-sm">
+        <img src="assets/images/materials-swatches.jpg" alt="Premium material swatches — Italian leather, velvet, solid woods" class="w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-white border-y border-line py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <div class="uppercase text-xs tracking-[3px] text-bronze" data-i18n="testimonials-eyebrow">WHAT OUR CLIENTS SAY</div>
+        <h3 class="font-serif text-4xl md:text-5xl tracking-[-1.4px] mt-2 max-w-2xl mx-auto" data-i18n="testimonials-title">
+          The best measure of our work is the people who live with it every day.
+        </h3>
+      </div>
+
+      <div class="testi-carousel relative overflow-hidden">
+        <div id="testimonials-grid" class="testi-track flex"></div>
+      </div>
+      <div class="mt-9 flex items-center justify-center gap-5">
+        <button id="testi-prev" class="testi-arrow" aria-label="Previous testimonials">‹</button>
+        <div id="testi-dots" class="flex items-center gap-2"></div>
+        <button id="testi-next" class="testi-arrow" aria-label="Next testimonials">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-ink text-cream py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12">
+        
+        <!-- Left: Form -->
+        <div>
+          <div class="uppercase tracking-[3px] text-xs text-brass" data-i18n="contact-eyebrow">LET’S BEGIN</div>
+          <h3 class="font-serif text-white text-[46px] leading-none tracking-[-1.8px] mt-2" data-i18n="contact-title">Tell us about your project.</h3>
+          <p class="mt-4 text-brass" data-i18n="contact-subtitle">Whether you need a single statement sofa or furniture for an entire hotel, we would love to hear from you. We respond within 24 hours.</p>
+
+          <!-- Form -->
+          <form id="contact-form" class="mt-9 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-name">FULL NAME</label>
+                <input type="text" name="name" required class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:border-brass">
+              </div>
+              <div>
+                <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-email">EMAIL ADDRESS</label>
+                <input type="email" name="email" required class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:border-brass">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-phone">PHONE NUMBER</label>
+                <input type="tel" name="phone" class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:border-brass">
+              </div>
+              <div>
+                <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-type">TYPE OF PROJECT</label>
+                <select name="type" required class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brass">
+                  <option value="" data-i18n="contact-form-type-placeholder">Select project type</option>
+                  <option value="residential" data-i18n="contact-form-type-residential">Residential</option>
+                  <option value="hospitality" data-i18n="contact-form-type-hospitality">Hospitality / Commercial</option>
+                  <option value="reupholstery" data-i18n="contact-form-type-reupholstery">Reupholstery &amp; Restoration</option>
+                  <option value="other" data-i18n="contact-form-type-other">Other / Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-budget">APPROXIMATE BUDGET</label>
+              <select name="budget" class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brass">
+                <option value="" data-i18n="contact-form-budget-placeholder">Select range (EUR)</option>
+                <option value="under-3k">Under €3,000</option>
+                <option value="3k-8k">€3,000 – €8,000</option>
+                <option value="8k-15k">€8,000 – €15,000</option>
+                <option value="15k-30k">€15,000 – €30,000</option>
+                <option value="30k+">€30,000+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs tracking-widest mb-1.5 text-brass" data-i18n="contact-form-message">TELL US MORE ABOUT YOUR PROJECT OR NEEDS</label>
+              <textarea name="message" rows="4" required class="input w-full bg-espresso border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-white/40 focus:border-brass"></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full mt-2 btn-lux bg-brass hover:bg-brass-dark text-ink font-semibold py-4 rounded-2xl tracking-[1.5px] text-sm transition-all">
+              <span data-i18n="contact-form-submit">SEND INQUIRY</span>
+            </button>
+            <p class="text-center text-[10px] text-white/50">We reply within 24 hours. Your information is private.</p>
+          </form>
+
+          <!-- Success State -->
+          <div id="form-success" class="hidden mt-9 bg-espresso border border-brass/40 rounded-3xl p-9 text-center">
+            <div class="mx-auto w-14 h-14 rounded-full bg-brass flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7" />
+              </svg>
+            </div>
+            <h4 class="mt-6 font-serif text-2xl tracking-tight">Thank you.</h4>
+            <p class="mt-2 text-brass">Teo or a member of the team will contact you personally within 24 hours to discuss your project.</p>
+            <button id="reset-form"
+                    class="mt-7 text-xs tracking-widest border-b border-white/30 hover:border-white pb-px">SEND ANOTHER MESSAGE</button>
+          </div>
+        </div>
+
+        <!-- Right: Direct Contact -->
+        <div class="pt-2 lg:pt-11">
+          <div class="uppercase text-xs tracking-[3px] text-brass mb-4" data-i18n="contact-direct">PREFER TO TALK?</div>
+          
+          <a href="tel:+385989907117" class="block text-4xl font-medium tracking-tighter hover:text-brass transition-colors">
+            <span data-i18n="contact-phone">+385 98 990 7117</span>
+          </a>
+          <a href="mailto:teo@haurdic.com" class="block mt-1 text-lg text-brass hover:underline">teo@haurdic.com</a>
+
+          <div class="mt-10 border-t border-white/10 pt-9">
+            <div class="text-xs tracking-widest text-brass">VISIT OUR WORKSHOP</div>
+            <div class="mt-2 text-xl leading-tight" data-i18n="contact-address">Dr. Andrije Štampara 49,<br>35000 Slavonski Brod, Croatia</div>
+            <div class="mt-2 text-sm text-white/60" data-i18n="contact-hours">Workshop visits by appointment only</div>
+            <div class="mt-5 rounded-2xl overflow-hidden border border-white/10">
+              <iframe title="Haurdić workshop location" class="w-full h-56 md:h-64 block" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Dr.%20Andrije%20%C5%A0tampara%2049%2C%2035000%20Slavonski%20Brod%2C%20Croatia&amp;output=embed"></iframe>
+            </div>
+          </div>
+
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-obsidian text-brass text-xs py-8 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-y-3">
+      <div class="flex flex-wrap gap-x-5 gap-y-1 items-center">
+        <span class="text-white/70" data-i18n="footer-tagline">Handcrafted in Slavonski Brod since 1966.</span>
+        <span class="hidden md:inline text-white/30">•</span>
+        <span class="text-white/70">Family owned • Third generation</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/haurdic.furniture/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-[18px] h-[18px]"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="https://www.facebook.com/haurdicfurniture/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.85.27-1.45 1.5-1.45h1.4V5.1C16.5 5.05 15.7 5 14.7 5c-2 0-3.4 1.22-3.4 3.46V11H9v3h2.3v7z"></path></svg>
+        </a>
+      </div>
+      <div class="text-white/40">
+        © <span id="year"></span> Haurdić – The Furniture Company. <span data-i18n="footer-rights">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating call button -->
+  <a href="tel:+385989907117" class="phone-fab" aria-label="Call Haurdić — +385 98 990 7117">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  </a>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="hidden fixed inset-0 bg-black/55 backdrop-blur-xl z-[70] items-center justify-center p-4 md:p-8">
+
+    <!-- Prev / Next project -->
+    <button onclick="window.HAURDIC_PREV_PROJECT && window.HAURDIC_PREV_PROJECT()" class="modal-nav left-3 md:left-8" aria-label="Previous project">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 19l-7-7 7-7" /></svg>
+    </button>
+    <button onclick="window.HAURDIC_NEXT_PROJECT && window.HAURDIC_NEXT_PROJECT()" class="modal-nav right-3 md:right-8" aria-label="Next project">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 5l7 7-7 7" /></svg>
+    </button>
+
+    <button id="close-project-modal" class="modal-close" aria-label="Close">×</button>
+
+    <div class="modal-glass relative w-full max-w-5xl rounded-[1.75rem] overflow-hidden max-h-[92dvh] overflow-y-auto border border-white/12 text-cream">
+      <div class="px-8 md:px-12 pt-10 md:pt-12">
+        <div id="modal-title" class="font-serif text-3xl md:text-[40px] leading-tight tracking-tight text-cream"></div>
+        <div id="modal-meta" class="text-sm text-cream/55 mt-2.5 tracking-wide"></div>
+      </div>
+
+      <div class="px-8 md:px-12 pb-12 pt-7">
+        <!-- Description -->
+        <div class="max-w-2xl">
+          <div class="uppercase text-[11px] tracking-[2.5px] text-brass">THE PROJECT</div>
+          <p id="modal-desc" class="mt-3 text-[15px] leading-relaxed text-cream/70"></p>
+        </div>
+
+        <!-- Gallery (masonry) -->
+        <div id="modal-images" class="mt-9 modal-masonry"></div>
+
+        <!-- Centered CTA -->
+        <div class="mt-11 flex justify-center">
+          <a href="#contact" onclick="window.HAURDIC_CLOSE_PROJECT && window.HAURDIC_CLOSE_PROJECT()"
+             class="btn-lux px-9 py-4 text-sm tracking-[1.5px] rounded-full bg-brass hover:bg-brass-dark text-ink font-semibold transition-colors" data-i18n="projects-cta">INQUIRE ABOUT A SIMILAR PROJECT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-[80] items-center justify-center p-4">
+    <button id="close-lightbox" class="absolute top-6 right-6 text-white text-4xl leading-none z-10">&times;</button>
+    <div class="relative max-w-6xl w-full">
+      <img id="lightbox-image" class="max-h-[86vh] mx-auto rounded-2xl object-contain" alt="Project detail">
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
+        <button onclick="prevLightboxImage()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-4 py-1.5 rounded-full tracking-widest">← PREV</button>
+        <button onclick="nextLightboxImage()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-4 py-1.5 rounded-full tracking-widest">NEXT →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/projects.js"></script>
+  <script src="data/testimonials.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Make sure Tailwind script ran after content (safety)
+    console.log('%c[Haurdić] Premium bilingual website ready.', 'color:#C5A06F');
+  </script>
+</body>
+</html>

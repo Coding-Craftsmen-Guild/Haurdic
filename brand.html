@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haurdić • Brand Guidelines</title>
+  <meta name="description" content="Brand system & design tokens for Haurdić – The Furniture Company. Typography, colour, components and voice.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN — same token config as the site -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    'rgb(var(--c-cream) / <alpha-value>)',
+            ink:      'rgb(var(--c-ink) / <alpha-value>)',
+            brass:    { DEFAULT: 'rgb(var(--c-brass) / <alpha-value>)', dark: 'rgb(var(--c-brass-dark) / <alpha-value>)' },
+            bronze:   'rgb(var(--c-bronze) / <alpha-value>)',
+            line:     'rgb(var(--c-line) / <alpha-value>)',
+            stone:    'rgb(var(--c-stone) / <alpha-value>)',
+            cocoa:    'rgb(var(--c-cocoa) / <alpha-value>)',
+            espresso: 'rgb(var(--c-espresso) / <alpha-value>)',
+            obsidian: 'rgb(var(--c-obsidian) / <alpha-value>)',
+            sand:     'rgb(var(--c-sand) / <alpha-value>)',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .doc-grid-bg {
+      background-image:
+        linear-gradient(rgb(var(--c-line) / .6) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(var(--c-line) / .6) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .spec-row { border-top: 1px solid rgb(var(--c-line)); }
+    .clearspace {
+      background:
+        repeating-linear-gradient(45deg, rgb(var(--c-brass) / .12) 0 6px, transparent 6px 12px);
+    }
+    [id] { scroll-margin-top: 96px; }
+    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body class="bg-cream text-ink antialiased selection:bg-brass selection:text-white">
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-lg border-b border-line">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-ink flex items-center justify-center">
+          <span class="text-cream font-serif text-xl tracking-[-1.5px] font-semibold">H</span>
+        </div>
+        <div class="leading-none">
+          <div class="font-serif text-lg tracking-[-1px]">Haurdić</div>
+          <div class="text-[8px] text-bronze tracking-[2px] mt-0.5">BRAND GUIDELINES</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-[13px] text-stone">
+        <a href="#logo" class="hover:text-ink transition-colors">Logo</a>
+        <a href="#color" class="hover:text-ink transition-colors">Colour</a>
+        <a href="#type" class="hover:text-ink transition-colors">Type</a>
+        <a href="#components" class="hover:text-ink transition-colors">Components</a>
+        <a href="#icons" class="hover:text-ink transition-colors">Icons</a>
+        <a href="#voice" class="hover:text-ink transition-colors">Voice</a>
+      </nav>
+      <a href="index.html" class="text-xs tracking-[1.5px] border border-ink rounded-full px-4 py-2 hover:bg-ink hover:text-cream transition-colors">VIEW SITE →</a>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <section id="top" class="relative overflow-hidden border-b border-line">
+    <div class="doc-grid-bg absolute inset-0 opacity-60"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-24 pb-20">
+      <div class="uppercase text-xs tracking-[3px] text-bronze mb-6">THE HAURDIĆ STANDARD · DESIGN SYSTEM v1.0</div>
+      <h1 class="font-serif text-6xl md:text-8xl leading-[0.92] tracking-[-3px] max-w-4xl">Brand &amp; design guidelines.</h1>
+      <p class="mt-7 max-w-xl text-lg text-cocoa leading-relaxed">The shared language behind every Haurdić touchpoint — the same tokens, type and components used to build the website, written down so the brand stays consistent across hands and decades.</p>
+      <div class="mt-10 flex flex-wrap gap-3 text-xs">
+        <span class="px-4 py-2 bg-white border border-line rounded-full">Family-owned · Est. 1966</span>
+        <span class="px-4 py-2 bg-white border border-line rounded-full">Slavonski Brod, Croatia</span>
+        <span class="px-4 py-2 bg-white border border-line rounded-full">Bilingual · EN / HR</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6">
+
+    <!-- LOGO -->
+    <section id="logo" class="py-20 border-b border-line">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">01 — IDENTITY</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">The mark &amp; lockup.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">A circular <em>H</em> monogram paired with the Playfair wordmark and a tracked-out descriptor. The monogram may stand alone; the wordmark should always sit with the descriptor beneath it.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-5">
+        <!-- Primary lockup on light -->
+        <div class="bg-white border border-line rounded-3xl p-10 flex flex-col">
+          <div class="text-[11px] tracking-[2px] text-stone mb-8">PRIMARY LOCKUP · ON LIGHT</div>
+          <div class="flex-1 flex items-center">
+            <a href="#" class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-ink flex items-center justify-center">
+                <span class="text-cream font-serif text-3xl tracking-[-1.5px] font-semibold">H</span>
+              </div>
+              <div>
+                <div class="font-serif text-3xl tracking-[-1.25px] text-ink">Haurdić</div>
+                <div class="text-[10px] text-bronze -mt-1 tracking-[2px]">THE FURNITURE COMPANY</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- On dark -->
+        <div class="bg-ink border border-ink rounded-3xl p-10 flex flex-col">
+          <div class="text-[11px] tracking-[2px] text-brass mb-8">REVERSED · ON INK</div>
+          <div class="flex-1 flex items-center">
+            <a href="#" class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center">
+                <span class="text-ink font-serif text-3xl tracking-[-1.5px] font-semibold">H</span>
+              </div>
+              <div>
+                <div class="font-serif text-3xl tracking-[-1.25px] text-cream">Haurdić</div>
+                <div class="text-[10px] text-brass -mt-1 tracking-[2px]">THE FURNITURE COMPANY</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <!-- Clear space -->
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">CLEAR SPACE</div>
+          <div class="relative inline-block">
+            <div class="absolute -inset-5 clearspace rounded-2xl"></div>
+            <div class="relative w-16 h-16 rounded-full bg-ink flex items-center justify-center">
+              <span class="text-cream font-serif text-4xl tracking-[-1.5px] font-semibold">H</span>
+            </div>
+          </div>
+          <p class="mt-7 text-sm text-cocoa leading-relaxed">Keep clear space equal to the height of the monogram on all sides. Nothing intrudes.</p>
+        </div>
+        <!-- Min size -->
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">MINIMUM SIZE</div>
+          <div class="flex items-end gap-5">
+            <div class="text-center">
+              <div class="w-9 h-9 rounded-full bg-ink flex items-center justify-center mx-auto"><span class="text-cream font-serif text-xl font-semibold">H</span></div>
+              <div class="mt-2 text-[10px] text-stone mono">36px · web</div>
+            </div>
+            <div class="text-center">
+              <div class="w-6 h-6 rounded-full bg-ink flex items-center justify-center mx-auto"><span class="text-cream font-serif text-sm font-semibold">H</span></div>
+              <div class="mt-2 text-[10px] text-stone mono">24px · favicon</div>
+            </div>
+          </div>
+          <p class="mt-7 text-sm text-cocoa leading-relaxed">Never render the monogram below 24px or the wordmark below 18px cap height.</p>
+        </div>
+        <!-- Don'ts -->
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">DON'T</div>
+          <ul class="space-y-3 text-sm text-cocoa">
+            <li class="flex gap-3"><span class="text-bronze">✕</span> Don't recolour the monogram outside ink / cream.</li>
+            <li class="flex gap-3"><span class="text-bronze">✕</span> Don't stretch, rotate or add shadows.</li>
+            <li class="flex gap-3"><span class="text-bronze">✕</span> Don't swap the serif for another typeface.</li>
+            <li class="flex gap-3"><span class="text-bronze">✕</span> Don't separate the descriptor from the wordmark.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOUR -->
+    <section id="color" class="py-20 border-b border-line">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">02 — COLOUR</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">A warm, earthen palette.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">Every colour is a token, defined once as an RGB channel triplet in <span class="mono text-sm">:root</span> and consumed as a Tailwind utility. Opacity modifiers (<span class="mono text-sm">/90</span>, <span class="mono text-sm">/40</span>) work everywhere.</p>
+
+      <div id="swatches" class="mt-12 space-y-12"></div>
+
+      <div class="mt-12 bg-ink text-cream rounded-3xl p-8 md:p-10">
+        <div class="text-[11px] tracking-[2px] text-brass mb-4">HOW TOKENS ARE DEFINED</div>
+        <pre class="mono text-[12.5px] leading-relaxed text-cream/90 overflow-x-auto"><span class="text-brass">:root</span> {
+  --c-cream:  249 246 240;   <span class="text-brass">/* page background */</span>
+  --c-ink:     44  37  34;   <span class="text-brass">/* primary text / dark surfaces */</span>
+  --c-brass:  197 160 111;   <span class="text-brass">/* gold accent */</span>
+}
+<span class="text-brass">// tailwind.config</span>
+colors: { ink: <span class="text-brass">'rgb(var(--c-ink) / &lt;alpha-value&gt;)'</span> }
+<span class="text-brass">// usage</span>  bg-ink  text-brass  border-line/40</pre>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section id="type" class="py-20 border-b border-line">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">03 — TYPOGRAPHY</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">Playfair &amp; Inter.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">An editorial serif for display, a quiet grotesque for everything else. Two families, used with discipline.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="flex items-baseline justify-between">
+            <div class="font-serif text-5xl">Playfair Display</div>
+            <span class="text-[11px] mono text-stone">font-serif</span>
+          </div>
+          <p class="mt-3 text-sm text-stone">Headlines, section titles, the wordmark, pull quotes &amp; numerals. Weights 400 / 500 / 600. Tight tracking on large sizes.</p>
+          <div class="mt-6 font-serif text-2xl text-ink leading-snug">Aa Bb Cc Ćć Čč Dd · 0123456789</div>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="flex items-baseline justify-between">
+            <div class="text-4xl font-medium">Inter</div>
+            <span class="text-[11px] mono text-stone">font-sans</span>
+          </div>
+          <p class="mt-3 text-sm text-stone">Body copy, UI, labels, eyebrows &amp; navigation. Weights 300 / 400 / 500 / 600. Generous line-height for reading.</p>
+          <div class="mt-6 text-2xl text-ink leading-snug">Aa Bb Cc Ćć Čč Dd · 0123456789</div>
+        </div>
+      </div>
+
+      <!-- Scale -->
+      <div class="mt-5 bg-white border border-line rounded-3xl overflow-hidden">
+        <div class="px-8 py-5 flex items-center justify-between">
+          <div class="text-[11px] tracking-[2px] text-stone">TYPE SCALE</div>
+          <div class="text-[11px] tracking-[2px] text-stone hidden sm:block">FAMILY · SIZE · USAGE</div>
+        </div>
+        <div id="type-scale"></div>
+      </div>
+
+      <!-- Eyebrow pattern -->
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">EYEBROW PATTERN</div>
+          <div class="uppercase text-xs tracking-[3px] text-bronze">OUR LEGACY</div>
+          <h3 class="font-serif text-4xl tracking-[-1.6px] mt-2">A family promise.</h3>
+          <p class="mt-3 text-sm text-stone leading-relaxed">Every section opens with a bronze, all-caps eyebrow at <span class="mono">tracking-[3px]</span>, followed by a Playfair title with negative tracking.</p>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">PARAGRAPH</div>
+          <p class="text-[15px] leading-relaxed text-cocoa">Since 1966, the Haurdić name has stood for uncompromising quality in custom furniture — patience, precision, and deep respect for the craft.</p>
+          <div class="mt-4 text-xs mono text-stone">text-[15px] · leading-relaxed · text-cocoa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section id="components" class="py-20 border-b border-line">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">04 — COMPONENTS</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">Buttons, forms &amp; cards.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">The same building blocks the site is made of. Pills for actions, rounded cards for content, hairline <span class="mono text-sm">border-line</span> dividers throughout.</p>
+
+      <!-- Buttons -->
+      <div class="mt-12 grid lg:grid-cols-2 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-7">BUTTONS · ON LIGHT</div>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#components" class="btn-lux inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-ink text-white font-semibold text-sm tracking-[1px] hover:bg-black transition-all">Primary</a>
+            <a href="#components" class="btn-lux px-6 py-2.5 rounded-full border border-ink text-sm font-medium tracking-wide hover:bg-ink hover:text-white transition-all">Outline</a>
+            <a href="#components" class="inline-flex items-center text-sm font-medium text-bronze hover:text-ink transition-colors">Text link
+              <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="mt-7 flex flex-wrap gap-2">
+            <button class="filter-btn active px-5 py-2 rounded-full text-sm border border-ink">Filter · active</button>
+            <button class="px-5 py-2 rounded-full text-sm border border-line text-stone hover:border-ink transition-colors">Filter · rest</button>
+          </div>
+        </div>
+        <div class="bg-ink rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-brass mb-7">BUTTONS · ON INK</div>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#components" class="btn-lux inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-brass hover:bg-brass-dark text-ink font-semibold text-sm tracking-[1.5px] transition-all">Send Inquiry</a>
+            <a href="#components" class="btn-lux px-6 py-2.5 rounded-full border border-white/40 text-white text-sm font-medium tracking-wide hover:bg-white/10 transition-all">Ghost</a>
+          </div>
+          <div class="mt-7">
+            <label class="block text-xs tracking-widest mb-1.5 text-brass">EMAIL ADDRESS</label>
+            <input type="email" placeholder="you@example.com" class="input w-full bg-espresso border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:border-brass">
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <!-- Service card -->
+        <div class="border border-line rounded-3xl p-8 bg-white">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">SERVICE CARD</div>
+          <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1v-5m0 0h4m-4 0a1 1 0 011-1v-4"/></svg>
+          </div>
+          <h4 class="font-serif text-2xl tracking-tight mb-3">Bespoke Sofas</h4>
+          <p class="text-sm leading-relaxed text-cocoa">Signature pieces designed around your architecture, art, and daily life.</p>
+        </div>
+        <!-- Stat block -->
+        <div class="border border-line rounded-3xl p-8 bg-white flex flex-col">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">STAT BLOCK</div>
+          <div class="mt-auto">
+            <div class="text-5xl font-semibold text-ink tabular-nums">58</div>
+            <div class="text-[10px] tracking-[2.5px] text-bronze mt-1">YEARS OF TRADITION</div>
+          </div>
+          <div class="mt-6 flex gap-4 pt-4 border-t border-line">
+            <div class="text-3xl font-serif text-brass">01</div>
+            <p class="text-sm leading-relaxed text-cocoa">Numbered accent for editorial lists.</p>
+          </div>
+        </div>
+        <!-- Testimonial -->
+        <div class="bg-white border border-line rounded-3xl p-8 relative flex flex-col">
+          <div class="text-[11px] tracking-[2px] text-stone mb-6">TESTIMONIAL</div>
+          <div class="quote flex-1">
+            <p class="text-[15px] leading-relaxed text-cocoa relative z-10">Three generations of craftsmanship is evident in every stitch.</p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-line">
+            <div class="font-medium text-ink">Marko &amp; Petra Babić</div>
+            <div class="text-xs text-bronze mt-0.5">Homeowners · Zagreb</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process step + radius/shadow -->
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-7">PROCESS STEP</div>
+          <div class="process-step flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-ink text-white flex items-center justify-center text-2xl font-serif">01</div>
+            <div>
+              <div class="font-semibold text-xl tracking-tight">Discovery</div>
+              <p class="mt-2 text-[15px] leading-relaxed text-cocoa">We listen, visit the site, and translate your vision into clear requirements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="text-[11px] tracking-[2px] text-stone mb-7">RADIUS &amp; ELEVATION</div>
+          <div class="flex flex-wrap items-end gap-5">
+            <div class="text-center"><div class="w-16 h-16 rounded-xl bg-cream border border-line"></div><div class="mt-2 text-[10px] mono text-stone">rounded-xl</div></div>
+            <div class="text-center"><div class="w-16 h-16 rounded-2xl bg-cream border border-line"></div><div class="mt-2 text-[10px] mono text-stone">rounded-2xl</div></div>
+            <div class="text-center"><div class="w-16 h-16 rounded-3xl bg-cream border border-line"></div><div class="mt-2 text-[10px] mono text-stone">rounded-3xl</div></div>
+            <div class="text-center"><div class="w-16 h-16 rounded-full bg-cream border border-line"></div><div class="mt-2 text-[10px] mono text-stone">full</div></div>
+          </div>
+          <div class="mt-7 flex flex-wrap items-end gap-5">
+            <div class="text-center"><div class="w-20 h-12 rounded-2xl bg-white shadow-sm"></div><div class="mt-2 text-[10px] mono text-stone">shadow-sm</div></div>
+            <div class="text-center"><div class="w-20 h-12 rounded-2xl bg-white shadow-xl"></div><div class="mt-2 text-[10px] mono text-stone">shadow-xl</div></div>
+            <div class="text-center"><div class="w-20 h-12 rounded-2xl bg-white" style="box-shadow:0 25px 50px -12px rgb(0 0 0 / .25)"></div><div class="mt-2 text-[10px] mono text-stone">card hover</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ICONS -->
+    <section id="icons" class="py-20 border-b border-line">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">05 — ICONOGRAPHY</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">Fine line icons.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">A single outline set: <span class="mono text-sm">1.75</span> stroke weight, round caps and joins, <span class="mono text-sm">24×24</span> viewbox. Currentcolor only — they inherit text colour. Used in dark rounded tiles across the site.</p>
+      <div id="icon-grid" class="mt-12 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+    </section>
+
+    <!-- VOICE -->
+    <section id="voice" class="py-20">
+      <div class="uppercase text-xs tracking-[3px] text-bronze">06 — VOICE &amp; TONE</div>
+      <h2 class="font-serif text-5xl tracking-[-1.8px] mt-3">How Haurdić speaks.</h2>
+      <p class="mt-4 max-w-xl text-cocoa leading-relaxed">Warm, assured, and specific. We sound like a third-generation maker who knows the craft — never like a marketing department. Every line ships in English and Croatian with equal care.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-7">
+          <div class="text-3xl font-serif text-brass">01</div>
+          <h4 class="font-serif text-xl mt-3 tracking-tight">Heritage, not hype</h4>
+          <p class="mt-2 text-sm text-cocoa leading-relaxed">Lead with craft and time. “Three generations of mastery,” not “world-class solutions.”</p>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-7">
+          <div class="text-3xl font-serif text-brass">02</div>
+          <h4 class="font-serif text-xl mt-3 tracking-tight">Concrete &amp; precise</h4>
+          <p class="mt-2 text-sm text-cocoa leading-relaxed">Real numbers earn trust: 58 years, 13 artisans, 42 pieces in six weeks.</p>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-7">
+          <div class="text-3xl font-serif text-brass">03</div>
+          <h4 class="font-serif text-xl mt-3 tracking-tight">Personal &amp; warm</h4>
+          <p class="mt-2 text-sm text-cocoa leading-relaxed">First person, human promises. “We treat every commission as a personal promise.”</p>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-7">
+          <div class="text-3xl font-serif text-brass">04</div>
+          <h4 class="font-serif text-xl mt-3 tracking-tight">Bilingual parity</h4>
+          <p class="mt-2 text-sm text-cocoa leading-relaxed">EN and HR are equals. Croatian keeps the same warmth — never a literal machine echo.</p>
+        </div>
+      </div>
+
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="flex items-center gap-2 text-bronze text-[11px] tracking-[2px] mb-5">✓ DO</div>
+          <ul class="space-y-4 text-[15px] text-cocoa leading-relaxed">
+            <li>“Every stitch, joint, and curve is inspected by hand.”</li>
+            <li>“White-glove installation by our own team.”</li>
+            <li class="mono text-sm text-stone">HR · “Izrađeno s majstorstvom triju generacija.”</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-line rounded-3xl p-8">
+          <div class="flex items-center gap-2 text-stone text-[11px] tracking-[2px] mb-5">✕ DON'T</div>
+          <ul class="space-y-4 text-[15px] text-stone leading-relaxed">
+            <li class="line-through/0">“Best-in-class furniture solutions for every budget!!”</li>
+            <li>Exclamation stacking, hard-sell urgency, or empty superlatives.</li>
+            <li>Literal, charmless machine translation of the Croatian.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-obsidian text-brass text-xs py-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-y-3">
+      <span class="text-white/70">Haurdić — The Furniture Company · Brand Guidelines v1.0</span>
+      <a href="index.html" class="text-white/50 hover:text-white transition-colors">Back to the website →</a>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Colour swatches -------------------------------------------------
+    const COLOR_GROUPS = [
+      { name: 'Core', items: [
+        { t:'cream', hex:'#F9F6F0', rgb:'249 246 240', use:'Page background', dark:false },
+        { t:'ink', hex:'#2C2522', rgb:'44 37 34', use:'Primary text · dark surfaces', dark:true },
+      ]},
+      { name: 'Accent', items: [
+        { t:'brass', hex:'#C5A06F', rgb:'197 160 111', use:'Gold accent · CTAs', dark:true },
+        { t:'brass-dark', hex:'#B38A57', rgb:'179 138 87', use:'Accent hover', dark:true },
+        { t:'bronze', hex:'#8B5E3C', rgb:'139 94 60', use:'Eyebrows · secondary accent', dark:true },
+      ]},
+      { name: 'Neutrals', items: [
+        { t:'cocoa', hex:'#3F3833', rgb:'63 56 51', use:'Body copy', dark:true },
+        { t:'stone', hex:'#6B655E', rgb:'107 101 94', use:'Muted / meta text', dark:true },
+        { t:'line', hex:'#EDE7DF', rgb:'237 231 223', use:'Hairline borders', dark:false },
+        { t:'sand', hex:'#F1EDE5', rgb:'241 237 229', use:'Switch track', dark:false },
+      ]},
+      { name: 'Dark surfaces', items: [
+        { t:'espresso', hex:'#3A322C', rgb:'58 50 44', use:'Input fields on dark', dark:true },
+        { t:'obsidian', hex:'#1F1A17', rgb:'31 26 23', use:'Footer', dark:true },
+      ]},
+    ];
+    const swatchHost = document.getElementById('swatches');
+    COLOR_GROUPS.forEach(group => {
+      const wrap = document.createElement('div');
+      wrap.innerHTML = `<div class="text-[11px] tracking-[2px] text-stone mb-4">${group.name.toUpperCase()}</div>`;
+      const grid = document.createElement('div');
+      grid.className = 'grid sm:grid-cols-2 lg:grid-cols-4 gap-4';
+      group.items.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'rounded-2xl border border-line overflow-hidden bg-white';
+        card.innerHTML = `
+          <div class="h-24 flex items-end p-3" style="background:${c.hex}">
+            <span class="text-[10px] tracking-[1.5px] ${c.dark ? 'text-white/80' : 'text-ink/60'}">${c.use}</span>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <div class="font-medium text-sm">${c.t}</div>
+              <div class="mono text-[11px] text-stone">${c.hex}</div>
+            </div>
+            <div class="mono text-[11px] text-stone mt-1">--c-${c.t}: ${c.rgb}</div>
+          </div>`;
+        grid.appendChild(card);
+      });
+      wrap.appendChild(grid);
+      swatchHost.appendChild(wrap);
+    });
+
+    // ---- Type scale ------------------------------------------------------
+    const SCALE = [
+      { label:'Display', cls:'font-serif text-6xl tracking-[-3px]', meta:'Playfair · 60px · hero', sample:'Crafted by hand' },
+      { label:'H2', cls:'font-serif text-5xl tracking-[-1.8px]', meta:'Playfair · 48px · section title', sample:'Spaces we have shaped' },
+      { label:'H3', cls:'font-serif text-3xl tracking-tight', meta:'Playfair · 30px · card title', sample:'Bespoke Sofas & Sectionals' },
+      { label:'Lead', cls:'text-xl text-cocoa', meta:'Inter · 20px · intro paragraph', sample:'Bespoke upholstered furniture.' },
+      { label:'Body', cls:'text-[15px] text-cocoa leading-relaxed', meta:'Inter · 15px · body copy', sample:'Every piece made by hand in our family workshop.' },
+      { label:'Eyebrow', cls:'uppercase text-xs tracking-[3px] text-bronze', meta:'Inter · 12px · 3px tracking', sample:'OUR LEGACY' },
+      { label:'Caption', cls:'text-[10px] tracking-[2.5px] text-bronze', meta:'Inter · 10px · stat label', sample:'YEARS OF TRADITION' },
+    ];
+    const scaleHost = document.getElementById('type-scale');
+    SCALE.forEach(s => {
+      const row = document.createElement('div');
+      row.className = 'spec-row px-8 py-6 flex items-center justify-between gap-6';
+      row.innerHTML = `
+        <div class="min-w-0">
+          <div class="${s.cls} truncate">${s.sample}</div>
+        </div>
+        <div class="text-right shrink-0">
+          <div class="text-xs font-medium text-ink">${s.label}</div>
+          <div class="mono text-[11px] text-stone mt-0.5 hidden sm:block">${s.meta}</div>
+        </div>`;
+      scaleHost.appendChild(row);
+    });
+
+    // ---- Icon grid (lifted from the site) --------------------------------
+    const ICONS = [
+      ['Frame / home','M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1v-5m0 0h4m-4 0a1 1 0 011-1v-4'],
+      ['Hospitality','M19 21V5a2 2 0 01-2-2H7a2 2 0 01-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1'],
+      ['Restoration','M4 4v5h.582m15.356 2A8.001 8.001 0 004.058 11H1M12 3v2m0 16v2m9-9H15m-6 0a8 8 0 01-.963-1.035'],
+      ['Fit-out / cog','M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z'],
+      ['Verified','M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 8.944 11.922'],
+      ['Chevron','M9 5l7 7-7 7'],
+      ['Arrow down','M19 14l-7 7m0 0l-7-7m7 7V3'],
+      ['Arrow up','M5 10l7-7m0 0l7 7'],
+      ['Menu','M4 6h16M4 12h16M4 18h16'],
+      ['Close','M6 18L18 6M6 6l12 12'],
+      ['Plus / pin','M12 3v2m0 16v2m9-9H15'],
+      ['Star','M9 12l2 2 4-4'],
+    ];
+    const iconHost = document.getElementById('icon-grid');
+    ICONS.forEach(([label, d]) => {
+      const tile = document.createElement('div');
+      tile.className = 'bg-white border border-line rounded-2xl p-5 flex flex-col items-center gap-4';
+      tile.innerHTML = `
+        <div class="w-12 h-12 rounded-2xl bg-ink flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="${d}"/></svg>
+        </div>
+        <div class="text-[11px] text-stone text-center">${label}</div>`;
+      iconHost.appendChild(tile);
+    });
+  </script>
+</body>
+</html>
